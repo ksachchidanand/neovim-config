@@ -1,5 +1,3 @@
--- [[ ~/.config/nvim/lua/plugins/lualine.lua ]]
-
 return {
   {
     "nvim-lualine/lualine.nvim",
@@ -30,7 +28,7 @@ return {
             },
           },
           lualine_x = {
-            -- { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = Util.fg("Special") },
+            { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = Util.fg("Special") },
             {
               "diagnostics",
               symbols = {
