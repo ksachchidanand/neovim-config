@@ -1,0 +1,5 @@
+require("configs.plugins.treesitter")
+require("configs.plugins.catppuccin")
+require("configs.plugins.telescope")
+require("configs.plugins.lualine")
+require("configs.plugins.mini")
