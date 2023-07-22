@@ -12,24 +12,24 @@ end
 local packer_bootstrap = ensure_packer()
 local packer = require('packer')
 
-packer.init({
-    git = {
-        cmd = 'git',
-        subcommands = {
-            update         = 'pull --ff --progress',
-            install        = 'clone --depth %i --progress',
-            fetch          = 'fetch --progress',
-            checkout       = 'checkout %s --',
-            update_branch  = 'merge --ff @{u}',
-            current_branch = 'branch',
-            diff           = 'log --color=never --pretty=format:FMT HEAD@{1}...HEAD',
-            diff_fmt       = '%%h %%s (%%cr)',
-            get_rev        = 'rev-parse --short HEAD',
-            get_msg        = 'log --color=never --pretty=format:FMT HEAD -n 1',
-            submodules     = 'submodule update --init --recursive'
-        },
-    },
-})
+-- packer.init({
+--     git = {
+--         cmd = 'git',
+--         subcommands = {
+--             update         = 'pull --ff --progress',
+--             install        = 'clone --depth %i --progress',
+--             fetch          = 'fetch --progress',
+--             checkout       = 'checkout %s --',
+--             update_branch  = 'merge --ff @{u}',
+--             current_branch = 'branch',
+--             diff           = 'log --color=never --pretty=format:FMT HEAD@{1}...HEAD',
+--             diff_fmt       = '%%h %%s (%%cr)',
+--             get_rev        = 'rev-parse --short HEAD',
+--             get_msg        = 'log --color=never --pretty=format:FMT HEAD -n 1',
+--             submodules     = 'submodule update --init --recursive'
+--         },
+--     },
+-- })
 
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
@@ -58,6 +58,8 @@ return packer.startup(function(use)
     use { 'echasnovski/mini.pairs', branch = 'stable' }
     use { 'echasnovski/mini.indentscope', branch = 'stable' }
     use { 'echasnovski/mini.align', branch = 'stable' }
+    use { 'folke/noice.nvim' }
+    use { 'MunifTanjim/nui.nvim' }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
