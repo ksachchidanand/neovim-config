@@ -44,11 +44,14 @@ return packer.startup(function(use)
     }
     use {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { 'nvim-lua/plenary.nvim' }
     }
     use {
         "nvim-telescope/telescope-file-browser.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+        requires = {
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim"
+        }
     }
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -60,6 +63,7 @@ return packer.startup(function(use)
     use { 'echasnovski/mini.align', branch = 'stable' }
     use { 'folke/noice.nvim' }
     use { 'MunifTanjim/nui.nvim' }
+    use { 'akinsho/toggleterm.nvim', tag = '*', config = true }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
